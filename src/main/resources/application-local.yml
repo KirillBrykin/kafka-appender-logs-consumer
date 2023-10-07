@@ -1,0 +1,4 @@
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+    ru.tander.notificator: debug

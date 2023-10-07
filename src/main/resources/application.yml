@@ -1,0 +1,13 @@
+server:
+  port: ${server_port:8080}
+kafka-consumer-config:
+  bootstrap-servers: ${kafka-bootstrap-servers:localhost:9092}
+  topic-name: ${kafka_topic_name:budget-logs}
+  key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  group-id: ${group-id:notificator-consumer-group}
+  auto-offset-reset: earliest
+  auto-startup: true
+#  security-protocol: SASL_PLAINTEXT
+  sasl-mechanism: PLAIN
+  sasl-jaas-config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${kafka_username}" password="${kafka_password}";
